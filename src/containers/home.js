@@ -88,13 +88,13 @@ export class HomeContainer extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log(state);
+const mapStateToProps = ({ home }) => {
+  console.log(home);
   return {
-    grid: state.grid,
-    player: state.player,
-    gameOver: state.gameOver,
+    grid: home.grid,
+    player: home.player,
+    gameOver: home.gameOver,
   };
 };
 
-export default connect(mapStateToProps)(Home); // export default connect(mapStateToProps, mapDispatchToProps)(Grid, Cell, Alert)
+export default connect(mapStateToProps)(Home);

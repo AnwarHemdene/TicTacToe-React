@@ -7,8 +7,8 @@ export default function Home(props) {
   return (
     <div>
       <h1>TicTacToe</h1>
-      {/*<h2>Player {props.player} </h2>*/}
-      {/*<GridContainer grid={props.grid} onCellClick={props.onCellClick} />*/}
+      <h2>Player {props.player} </h2>
+      <GridContainer grid={props.grid} onCellClick={props.onCellClick} />
     </div>
   );
 }
