@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Home from "./home";
-import Connect from "./connect";
+import Home from "./containers/home";
+import Connect from "./containers/connect";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {

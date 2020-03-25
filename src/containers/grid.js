@@ -1,7 +1,6 @@
 import React from "react";
-import Cell from "./cell";
-
-export default class Grid extends React.Component {
+import Grid from "../components/grid";
+export default class GridContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,16 +19,6 @@ export default class Grid extends React.Component {
     });
   }
   render() {
-    return (
-      <div className={"grid"}>
-        {this.state.grid.map((cell, index) => (
-          <Cell
-            key={index}
-            value={cell}
-            onCellClick={() => this.onClick(index, cell)}
-          />
-        ))}
-      </div>
-    );
+    return <Grid grid={this.state.grid} onCellClick={this.onClick} />;
   }
 }
