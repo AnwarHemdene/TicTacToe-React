@@ -1,13 +1,26 @@
 import React from "react";
-import "./home.css";
-import GridContainer from "../containers/grid";
+import Home from "../components/home/home";
+import Grid from "../components/grid";
+export default class HomeContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      grid: new Array(9).fill(""),
+      player: "X",
+    };
+    this.onClick = this.onClick.bind(this);
+  }
 
-export default function Home() {
-  return (
-    <div>
-      <h1>TicTacToe</h1>
-      <h2>Player </h2>
-      <GridContainer />
-    </div>
-  );
+  onClick(index, cell) {
+    console.log(index, cell);
+    const newGrid = this.state.grid;
+    newGrid[index] = this.state.player;
+    this.setState({
+      grid: newGrid,
+      player: this.state.player === "X" ? "O" : "X",
+    });
+  }
+  render() {
+    return <Home grid={this.state.grid} onCellClick={this.onClick} />;
+  }
 }

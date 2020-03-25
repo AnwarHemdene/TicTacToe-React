@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Home from "./containers/home";
+import HomeContainer from "./containers/home";
 import Connect from "./containers/connect";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -21,7 +21,7 @@ function App() {
             <Connect />
           </Route>
           <Route path="/">
-            <Home />
+            <HomeContainer />
           </Route>
         </Switch>
       </Router>
