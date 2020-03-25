@@ -1,6 +1,5 @@
 import React from "react";
 function Cell(props) {
-  console.log(props);
   return (
     <div
       className="cell"
