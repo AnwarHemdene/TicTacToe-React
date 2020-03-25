@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import HomeContainer from "./containers/home";
+import { HomeContainer } from "./containers/home";
 import Connect from "./containers/connect";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 

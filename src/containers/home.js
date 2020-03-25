@@ -1,7 +1,13 @@
 import React from "react";
+import { connect } from "react-redux";
+
 import Home from "../components/home/home";
 import Alert from "../components/alert";
-export default class HomeContainer extends React.Component {
+import { updateGrid } from "../redux/home/actions";
+import Grid from "../components/grid";
+import Cell from "../components/cell";
+
+export class HomeContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -72,12 +78,23 @@ export default class HomeContainer extends React.Component {
       <Alert player={this.state.player} restartGame={this.restartGame} />
     ) : (
       <Home
-        grid={this.state.grid}
-        onCellClick={this.onClick}
-        player={this.state.player}
-        gameOver={this.state.gameOver}
-        restartGame={this.restartGame}
+      // grid={this.state.grid}
+      // onCellClick={this.onClick}
+      // player={this.state.player}
+      // gameOver={this.state.gameOver}
+      // restartGame={this.restartGame}
       />
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    grid: state.grid,
+    player: state.player,
+    gameOver: state.gameOver,
+  };
+};
+
+export default connect(mapStateToProps)(Home); // export default connect(mapStateToProps, mapDispatchToProps)(Grid, Cell, Alert)
